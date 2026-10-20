@@ -1,4 +1,4 @@
-# VP2x Control voor macOS
+# Symetrix AirTools Voice Processor 2x voor MAC
 
 Onafhankelijke native macOS-app voor de **Symetrix AirTools Voice Processor 2x**.
 Bedient de bestaande hardware via Ethernet, zonder Windows of Parallels. De
