@@ -4,6 +4,10 @@ Onafhankelijke native macOS-app voor de **Symetrix AirTools Voice Processor 2x**
 Bedient de bestaande hardware via Ethernet, zonder Windows of Parallels. De
 audiobewerking blijft in de VP2x. Huidige versie: **0.3.10**.
 
+![VP2x Control voor macOS met EQ en compressor](docs/images/vp2x-control-macos.png)
+
+*Voorbeeldscherm met gesimuleerde instellingen en lege presetlocaties.*
+
 ## Functies
 
 - Beide kanalen met input/outputmeters, mute en DSP bypass.
