@@ -6,7 +6,9 @@ MODE="${1:-run}"
 APP_NAME="VP2xMac"
 BUNDLE_ID="nl.rob.vp2xcontrol"
 DIST_BUNDLE="$ROOT_DIR/dist/VP2x Control.app"
-if [[ "$MODE" != "--test" ]]; then pkill -x "$APP_NAME" >/dev/null 2>&1 || true; fi
+case "$MODE" in
+  run|--verify|--debug|--logs|--telemetry) pkill -x "$APP_NAME" >/dev/null 2>&1 || true ;;
+esac
 # Compile a stable local copy: Documents may be managed by a File Provider.
 BUILD_SOURCE="${TMPDIR:-/private/tmp}/vp2x-control-build-$UID"
 APP_BUNDLE="$BUILD_SOURCE/VP2x Control.app"
@@ -36,6 +38,7 @@ cat > "$APP_BUNDLE/Contents/Info.plist" <<PLIST
 <key>CFBundleDisplayName</key><string>VP2x Control</string>
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>CFBundleShortVersionString</key><string>0.3.10</string>
+<key>CFBundleVersion</key><string>0.3.10</string>
 <key>LSMinimumSystemVersion</key><string>14.0</string>
 <key>NSPrincipalClass</key><string>NSApplication</string>
 <key>NSLocalNetworkUsageDescription</key><string>VP2x Control bedient jouw AirTools Voice Processor 2x via Ethernet.</string>

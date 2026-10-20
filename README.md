@@ -23,6 +23,17 @@ audiobewerking blijft in de VP2x. Huidige versie: **0.3.10**.
 Firmware-updates zijn niet geïmplementeerd. De responscurves zijn berekend uit
 instellingen, geen gemeten audiorespons.
 
+## Downloaden
+
+Download het [ZIP-pakket voor Apple Silicon, versie 0.3.10](https://github.com/pa3eke/Symetrix-AirTools-Voice-Processor-2x-voor-MAC/releases/tag/v0.3.10).
+Pak het uit en sleep `VP2x Control.app` naar Programma’s. Vereist macOS 14 of nieuwer.
+
+Het openbare pakket bevat geen presets, back-ups of FTP-inloggegevens.
+De audiobediening en lokale presetfuncties zijn beschikbaar; het lezen en bijwerken
+van de presetbibliotheek op de VP2x vereist een eigen build met FTP-configuratie,
+zoals hieronder beschreven. De app is ad-hoc ondertekend, niet door Apple
+ genotariseerd; macOS kan het openen daarom blokkeren.
+
 ## Bouwen
 
 Vereist macOS 14 of nieuwer en de Apple Swift-toolchain (Xcode Command Line Tools).
