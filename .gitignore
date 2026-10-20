@@ -1,0 +1,17 @@
+.DS_Store
+.build/
+.swiftpm/
+dist/
+build/
+__pycache__/
+.env
+.env.*
+Sources/VP2xCore/Resources/DeviceFTP.json
+*.site
+*.vp2x
+*.vp2x*
+*.dat
+*.log
+Presets/
+backups/
+snapshots/
