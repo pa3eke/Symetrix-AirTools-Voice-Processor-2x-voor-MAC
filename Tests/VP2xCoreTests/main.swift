@@ -5,7 +5,7 @@ import Darwin
 // Run from a relocated app with no SwiftPM build resources available.
 if CommandLine.arguments.contains("--resources-check") {
     let missing = CommandLine.arguments.contains("--expect-missing")
-    for name in ["Controls", "Skin"] {
+    for name in ["Controls", "Skin", "DeviceFTPDefaults"] {
         let url = VPResources.url(name, withExtension: "json")
         guard (url == nil) == missing else { fatalError("Resource availability mismatch: \(name)") }
         if let url { _ = try JSONSerialization.jsonObject(with: Data(contentsOf: url)) }

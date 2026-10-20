@@ -25,9 +25,10 @@ public enum DevicePresetFiles {
     private static func run(host: String, arguments: [String]) throws {
         guard VPProtocol.validIPv4(host) else { throw VPClient.Failure.invalidAddress }
         struct Login: Decodable { let user: String; let password: String }
-        guard let resource = VPResources.url("DeviceFTP", withExtension: "json") else {
+        guard let resource = VPResources.url("DeviceFTP", withExtension: "json")
+            ?? VPResources.url("DeviceFTPDefaults", withExtension: "json") else {
             throw NSError(domain: "VP2xPresets", code: 1, userInfo: [NSLocalizedDescriptionKey:
-                "FTP-configuratie ontbreekt. Zie README voor DeviceFTP.json. De back-up op je Mac blijft beschikbaar."])
+                "Een meegeleverd FTP-hulpbestand ontbreekt. Installeer de app opnieuw. De back-up op je Mac blijft beschikbaar."])
         }
         let login = try JSONDecoder().decode(Login.self, from: Data(contentsOf: resource))
         let process = Process()

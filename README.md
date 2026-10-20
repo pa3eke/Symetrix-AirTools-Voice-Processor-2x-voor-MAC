@@ -2,7 +2,7 @@
 
 Onafhankelijke native macOS-app voor de **Symetrix AirTools Voice Processor 2x**.
 Bedient de bestaande hardware via Ethernet, zonder Windows of Parallels. De
-audiobewerking blijft in de VP2x. Huidige versie: **0.3.10**.
+audiobewerking blijft in de VP2x. Huidige versie: **0.3.11**.
 
 ![VP2x Control voor macOS met EQ en compressor](docs/images/vp2x-control-macos.png)
 
@@ -25,14 +25,14 @@ instellingen, geen gemeten audiorespons.
 
 ## Downloaden
 
-Download het [ZIP-pakket voor Apple Silicon, versie 0.3.10](https://github.com/pa3eke/Symetrix-AirTools-Voice-Processor-2x-voor-MAC/releases/tag/v0.3.10).
+Download het [ZIP-pakket voor Apple Silicon, versie 0.3.11](https://github.com/pa3eke/Symetrix-AirTools-Voice-Processor-2x-voor-MAC/releases/tag/v0.3.11).
 Pak het uit en sleep `VP2x Control.app` naar Programma’s. Vereist macOS 14 of nieuwer.
 
-Het openbare pakket bevat geen presets, back-ups of FTP-inloggegevens.
-De audiobediening en lokale presetfuncties zijn beschikbaar; het lezen en bijwerken
-van de presetbibliotheek op de VP2x vereist een eigen build met FTP-configuratie,
-zoals hieronder beschreven. De app is ad-hoc ondertekend, niet door Apple
- genotariseerd; macOS kan het openen daarom blokkeren.
+Het openbare pakket bevat geen gebruikerspresets of back-ups. De vaste
+FTP-fabrieksconfiguratie uit de oorspronkelijke Windows-app is meegeleverd,
+zodat ook het apparaatpresetbeheer zonder eigen build beschikbaar is.
+De app is ad-hoc ondertekend en niet door Apple genotariseerd; macOS kan
+het openen daarom blokkeren.
 
 ## Bouwen
 
@@ -56,18 +56,22 @@ ondertekend en niet door Apple genotariseerd.
 ## FTP-configuratie voor apparaatpresets
 
 De app gebruikt naast het besturingsprotocol FTP om het oorspronkelijke
-projectbestand met presetnamen te lezen en bij te werken. Verbindingsgegevens
-worden **niet meegeleverd**. Maak voor je eigen apparaat lokaal het bestand aan:
+projectbestand met presetnamen te lezen en bij te werken. De vaste
+fabrieksconfiguratie uit de originele Windows-software is standaard opgenomen
+in `DeviceFTPDefaults.json`. Dit zijn geen persoonlijke inloggegevens van een
+gebruiker. De fabrieksconfiguratie is getest op één VP2x; compatibiliteit met
+iedere firmwarevariant is niet bevestigd.
+
+Een afwijkende configuratie kun je voor een eigen build lokaal toevoegen:
 
 ```sh
 cp DeviceFTP.example.json Sources/VP2xCore/Resources/DeviceFTP.json
 ```
 
-Vul hierin de geldige FTP-gebruikersnaam en het wachtwoord van jouw apparaat in,
-en bouw daarna de app. Dit lokale bestand wordt door Git genegeerd. Zonder deze
-configuratie blijft de normale audiobediening beschikbaar, maar kunnen onderdelen
-van het apparaatpresetbeheer niet werken. Upload geen geconfigureerde app-bundel:
-het lokale configuratiebestand wordt bij het bouwen in de app opgenomen.
+Vul dit bestand met de gegevens van jouw apparaat en bouw de app. Dit lokale
+bestand krijgt voorrang op de fabrieksconfiguratie en wordt door Git genegeerd.
+Publiceer geen eigen configuratie of daarmee gebouwde app met persoonlijke
+inloggegevens.
 
 ## Eigen gegevens
 

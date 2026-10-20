@@ -37,8 +37,8 @@ cat > "$APP_BUNDLE/Contents/Info.plist" <<PLIST
 <key>CFBundleName</key><string>VP2x Control</string>
 <key>CFBundleDisplayName</key><string>VP2x Control</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>0.3.10</string>
-<key>CFBundleVersion</key><string>0.3.10</string>
+<key>CFBundleShortVersionString</key><string>0.3.11</string>
+<key>CFBundleVersion</key><string>0.3.11</string>
 <key>LSMinimumSystemVersion</key><string>14.0</string>
 <key>NSPrincipalClass</key><string>NSApplication</string>
 <key>NSLocalNetworkUsageDescription</key><string>VP2x Control bedient jouw AirTools Voice Processor 2x via Ethernet.</string>
